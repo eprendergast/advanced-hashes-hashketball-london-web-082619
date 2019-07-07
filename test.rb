@@ -116,4 +116,4 @@ game_hash = {
 }
 
 #
-puts game_hash[:home][:players].class
+puts game_hash[:home][:players][0]
