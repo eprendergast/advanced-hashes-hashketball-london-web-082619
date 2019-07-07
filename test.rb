@@ -118,10 +118,12 @@ game_hash = {
 #
 p game_hash[:away][:players][0]
 #=> {"Jeff Adrien"=>{:number=>4, :shoe=>18, :points=>10, :rebounds=>1, :assists=>1, :steals=>2, :blocks=>7, :slam_dunks=>2}}
-
+array = []
 game_hash.each do |location, team_data|
   team_data.each do |attribute, data|
     if attribute == :players
-
+      data.each do |player_stats|
+        array.push(player_stats)
+      end
     end
 end
