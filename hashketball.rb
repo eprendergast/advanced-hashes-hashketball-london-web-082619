@@ -238,9 +238,6 @@ def big_shoe_rebounds
   end
   #Then, return that player's number of rebounds
   big_shoe_rebounds
-  #Remember to think about return values here.
-  #Use binding.pry to drop into your method and understand what it is returning and why.
-
 end
 
 #-----BONUS QUESTIONS-----#
