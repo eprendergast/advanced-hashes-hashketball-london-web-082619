@@ -124,6 +124,6 @@ array = [
   5
 ]
 
-# puts array[1]
-
-puts game_hash[:home][:players][0]
+puts array[1]
+#
+# puts game_hash[:home][:players][0]
