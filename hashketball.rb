@@ -152,13 +152,29 @@ def player_numbers(team_name)
   jersey_numbers = []
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
-
+      data.each do |player_data|
+        player_data.each do |player_name, stats|
+          
+        end
+      end
     end
   end
 end
 
+has_key
+has_value
+
+#returns a hash of that player's stats
 def player_stats(player)
-  #returns a hash of that player's stats
+  player_data = [] 
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        player_data.push(game_hash[location][attribute])
+      end
+    end
+  end
+  puts player_data
 end
 
 def big_shoe_rebounds
