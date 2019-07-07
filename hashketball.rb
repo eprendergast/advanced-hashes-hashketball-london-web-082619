@@ -198,14 +198,20 @@ end
 
 #returns a hash of that player's stats
 def player_stats(player)
+  player_stats
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
-        player_stats = game_hash[location][attribute][player]
+        data.each do |player_data|
+          player_data.each do |name, stats|
+            if name == player
+               player_stats = stats
+            end
+          end
+        end
       end
     end
   end
-  player_stats
 end
 
 def big_shoe_rebounds
