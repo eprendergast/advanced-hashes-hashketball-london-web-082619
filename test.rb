@@ -116,8 +116,4 @@ game_hash = {
 }
 
 #
-array = game_hash[:home][:players]
-binding.pry
-array.each do |array|
-  puts array
-end
+puts game_hash[:home][:players]
