@@ -7,7 +7,7 @@ def game_hash
       :team_name => "Brooklyn Nets",
       :colors => ["Black", "White"],
       :players => [
-        "Alan Anderson" => {
+        {"Alan Anderson" => {
           :number => 0,
           :shoe => 16,
           :points => 22,
@@ -16,8 +16,8 @@ def game_hash
           :steals => 3,
           :blocks => 1,
           :slam_dunks => 1
-        },
-        "Reggie Evans" => {
+        }},
+        {"Reggie Evans" => {
           :number => 30,
           :shoe => 14,
           :points => 12,
@@ -26,8 +26,8 @@ def game_hash
           :steals => 12,
           :blocks => 12,
           :slam_dunks => 7
-        },
-        "Brook Lopez" => {
+        }},
+        {"Brook Lopez" => {
           :number => 11,
           :shoe => 17,
           :points => 17,
@@ -36,8 +36,8 @@ def game_hash
           :steals => 3,
           :blocks => 1,
           :slam_dunks => 15
-        },
-        "Mason Plumlee" => {
+        }},
+        {"Mason Plumlee" => {
           :number => 1,
           :shoe => 19,
           :points => 26,
@@ -46,8 +46,8 @@ def game_hash
           :steals => 3,
           :blocks => 8,
           :slam_dunks => 5
-        },
-        "Jason Terry" => {
+        }},
+        {"Jason Terry" => {
           :number => 31,
           :shoe => 15,
           :points => 19,
@@ -56,14 +56,14 @@ def game_hash
           :steals => 4,
           :blocks => 11,
           :slam_dunks => 1
-        }
+        }}
       ]
     },
     :away => {
       :team_name => "Charlotte Hornets",
       :colors => ["Turquoise", "Purple"],
       :players => [
-        "Jeff Adrien" => {
+        {"Jeff Adrien" => {
           :number => 4,
           :shoe => 18,
           :points => 10,
@@ -72,8 +72,8 @@ def game_hash
           :steals => 2,
           :blocks => 7,
           :slam_dunks => 2
-        },
-        "Bismack Biyombo" => {
+        }},
+        {"Bismack Biyombo" => {
           :number => 0,
           :shoe => 16,
           :points => 12,
@@ -82,8 +82,8 @@ def game_hash
           :steals => 22,
           :blocks => 15,
           :slam_dunks => 10
-        },
-        "DeSagna Diop" => {
+        }},
+        {"DeSagna Diop" => {
           :number => 2,
           :shoe => 14,
           :points => 24,
@@ -92,8 +92,8 @@ def game_hash
           :steals => 4,
           :blocks => 5,
           :slam_dunks => 5
-        },
-        "Ben Gordon" => {
+        }},
+        {"Ben Gordon" => {
           :number => 8,
           :shoe => 15,
           :points => 33,
@@ -102,8 +102,8 @@ def game_hash
           :steals => 1,
           :blocks => 1,
           :slam_dunks => 0
-        },
-        "Kemba Walker" => {
+        }},
+        {"Kemba Walker" => {
           :number => 33,
           :shoe => 15,
           :points => 6,
@@ -112,15 +112,28 @@ def game_hash
           :steals => 7,
           :blocks => 5,
           :slam_dunks => 12
-        }
+        }}
       ]
     }
   }
   game_hash #return the game_hash hash
 end
 
+#returns number of points scored by player
 def num_points_scored(player)
-  #returns number of points scored by player
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+          player.each do |name, stats|
+            if name == player
+              return stats[:points]
+            end
+          end
+        end
+      end
+    end
+  end
 end
 
 def shoe_size(player)
