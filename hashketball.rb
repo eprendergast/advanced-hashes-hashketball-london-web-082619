@@ -138,8 +138,23 @@ def num_points_scored(player)
   points
 end
 
+#returns the player's shoe size
 def shoe_size(player)
-  #returns the player's shoe size
+  shoe_size = 0
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_data|
+          player_data.each do |name, stats|
+            if name == player
+              points = stats[:points]
+            end
+          end
+        end
+      end
+    end
+  end
+  points
 end
 
 #returns an array of the team colors
