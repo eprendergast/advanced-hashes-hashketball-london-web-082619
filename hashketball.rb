@@ -191,7 +191,7 @@ def player_numbers(team_name)
       end
     end
   end
-  points
+  jersey_numbers
 end
 
 #returns a hash of that player's stats
