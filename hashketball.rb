@@ -267,21 +267,32 @@ end
 def winning_team
   home_team = 0
   away_team = 0
-  #sum home team points
+
   game_hash.each do |location, team_data|
+    #sum home team points
     if location == :home
       team_data.each do |attribute, data|
         if attribute == :players
           data.each do |player_data|
             player_data.each do |name, stats|
-              if stats[:points] > most_points
-                most_points = stats[:points]
-                player_with_most_points = name
-              end
+              home_team += stats[:points]
             end
           end
         end
       end
+    end
+    #sum away team points
+    if location == :away
+      team_data.each do |attribute, data|
+        if attribute == :players
+          data.each do |player_data|
+            player_data.each do |name, stats|
+              home_team += stats[:points]
+            end
+          end
+        end
+      end
+    end
 
   end
 
