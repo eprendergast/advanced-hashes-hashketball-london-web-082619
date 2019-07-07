@@ -166,15 +166,14 @@ has_value
 
 #returns a hash of that player's stats
 def player_stats(player)
-  player_data = []
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
-        player_data.push(game_hash[location][attribute])
+        player_stats = game_hash[location][attribute][player]
       end
     end
   end
-  puts player_data
+  player_stats
 end
 
 def big_shoe_rebounds
