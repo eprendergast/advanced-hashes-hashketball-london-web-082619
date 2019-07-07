@@ -126,11 +126,9 @@ game_hash.each do |location, team_data|
       data.each do |player|
         player.each do |name, stats|
           puts stats[:points]
-          end
+          
         end
       end
     end
   end
 end
-
-p points
