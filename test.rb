@@ -128,6 +128,7 @@ game_hash.each do |location, team_data|
         player_data.each do |name, stats|
           if name == player
             return stats
+            puts stats
           end
         end
       end
