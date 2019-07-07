@@ -116,4 +116,4 @@ game_hash = {
 }
 
 #
-p game_hash[:away][:players][0][:shoe]
+p game_hash[:away][:players][0]
