@@ -120,13 +120,14 @@ game_hash = {
 #=> {"Jeff Adrien"=>{:number=>4, :shoe=>18, :points=>10, :rebounds=>1, :assists=>1, :steals=>2, :blocks=>7, :slam_dunks=>2}}
 array = []
 player = "Alan Anderson"
+
 game_hash.each do |location, team_data|
   team_data.each do |attribute, data|
     if attribute == :players
       data.each do |player_data|
         player_data.each do |name, stats|
           if name == player
-            puts stats
+            return stats
           end
         end
       end
