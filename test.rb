@@ -124,7 +124,7 @@ game_hash.each do |location, team_data|
     if attribute == :players
       data.each do |player_stats|
         player_stats.each do |name, stats|
-          puts stats
+          puts stats[:shoe]
         end
       end
     end
