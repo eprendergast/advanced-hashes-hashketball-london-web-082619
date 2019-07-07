@@ -161,9 +161,6 @@ def player_numbers(team_name)
   end
 end
 
-has_key
-has_value
-
 #returns a hash of that player's stats
 def player_stats(player)
   game_hash.each do |location, team_data|
