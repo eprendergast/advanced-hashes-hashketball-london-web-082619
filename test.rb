@@ -171,4 +171,4 @@ array = [
 
 # puts array[1]
 
-puts game_hash[:home][:players][1]
+puts game_hash[:home][:players]
