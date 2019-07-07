@@ -313,7 +313,7 @@ def player_with_longest_name
         data.each do |player_data|
           player_data.each do |name, stats|
             if name.length > longest_name_length
-              longest_name_length = name.length 
+              longest_name_length = name.length
               player_with_longest_name = name
             end
           end
