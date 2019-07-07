@@ -263,8 +263,28 @@ def most_points_scored
   player_with_most_points
 end
 
+#Which team has the most points?
 def winning_team
-  #Which team has the most points?
+  home_team = 0
+  away_team = 0
+  #sum home team points
+  game_hash.each do |location, team_data|
+    if location == :home
+      team_data.each do |attribute, data|
+        if attribute == :players
+          data.each do |player_data|
+            player_data.each do |name, stats|
+              if stats[:points] > most_points
+                most_points = stats[:points]
+                player_with_most_points = name
+              end
+            end
+          end
+        end
+      end
+      
+  end
+  
 end
 
 def player_with_longest_name
