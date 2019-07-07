@@ -237,7 +237,7 @@ def big_shoe_rebounds
     end
   end
   #Then, return that player's number of rebounds
-  big_shoe_rebounds
+  #big_shoe_rebounds
 end
 
 #-----BONUS QUESTIONS-----#
