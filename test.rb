@@ -126,6 +126,7 @@ game_hash.each do |location, team_data|
         array.push(player_stats)
       end
     end
+  end
 end
 
 puts array
