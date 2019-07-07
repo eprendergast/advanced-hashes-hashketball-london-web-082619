@@ -115,3 +115,4 @@ game_hash = {
 
 #
 array = game_hash[:home][:players]
+puts array
