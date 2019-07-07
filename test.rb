@@ -113,4 +113,4 @@ game_hash = {
   }
 }
 
-puts game_hash[:home][:players]["Alan Anderson"]
+puts game_hash[:home][:players][0]
