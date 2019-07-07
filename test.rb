@@ -113,11 +113,4 @@ game_hash = {
   }
 }
 
-player_data = []
-game_hash.each do |location, team_data|
-  team_data.each do |attribute, data|
-    if attribute == :players
-      puts data
-    end
-  end
-end
+puts game_hash[:home][:players]
