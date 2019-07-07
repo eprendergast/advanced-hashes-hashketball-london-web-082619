@@ -215,10 +215,20 @@ def player_stats(player)
   player_stats
 end
 
+#return the number of rebounds associated with the player that has the largest shoe size
 def big_shoe_rebounds
-  #return the number of rebounds associated with the player that has the largest shoe size
-
   #First, find the player with the largest shoe size
+  largest_size = 0
+  player_with_largest_shoes = nil
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |name, stats|
+          
+        end
+      end
+    end
+  end
   #Then, return that player's number of rebounds
   #Remember to think about return values here.
   #Use binding.pry to drop into your method and understand what it is returning and why.
