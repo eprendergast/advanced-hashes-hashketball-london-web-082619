@@ -177,18 +177,21 @@ def team_names
   team_names
 end
 
+#returns an array of the jersey number's for that team
 def player_numbers(team_name)
-  #returns an array of the jersey number's for that team
   jersey_numbers = []
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
-      data.each do |player_data|
-        player_data.each do |player_name, stats|
-
+      if attribute == :players
+        data.each do |player_data|
+          player_data.each do |name, stats|
+            jersey_numbers.push(stats[:number])
+          end
         end
       end
     end
   end
+  points
 end
 
 #returns a hash of that player's stats
