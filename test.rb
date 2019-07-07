@@ -115,4 +115,7 @@ game_hash = {
 
 #
 array = game_hash[:home][:players]
-puts array["Alan Anderson"]
+array.each do |array|
+  puts array 
+end 
+
