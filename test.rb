@@ -113,17 +113,5 @@ game_hash = {
   }
 }
 
-
-
-
-array = [
-1,
-  2,
-  3,
-  4,
-  5
-]
-
-puts array[1]
 #
-# puts game_hash[:home][:players][0]
+array = game_hash[:home][:players]
