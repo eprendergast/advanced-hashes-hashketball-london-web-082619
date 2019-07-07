@@ -115,6 +115,6 @@ game_hash = {
 
 game_hash.each do |location, team_data|
   team_data.each do |attribute, data|
-    puts game_hash[location][:players]
+    puts game_hash[location][:players][data]
   end
 end
