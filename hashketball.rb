@@ -324,6 +324,31 @@ def player_with_longest_name
   player_with_longest_name
 end
 
+#Write a method that returns true if the player with the longest name had the most steals.
 def long_name_steals_a_ton
-  #Write a method that returns true if the player with the longest name had the most steals.
+  longest_name = player_with_longest_name
+
+  most_steals = 0
+  player_with_most_steals = ""
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_data|
+          player_data.each do |name, stats|
+            if stats[:steals] > most_steals
+              most_steals = stats[:steals]
+              player_with_most_steals = name
+            end
+          end
+        end
+      end
+    end
+  end
+
+  if longest_name = player_with_most_steals
+    return true
+  else
+    false
+  end
+  
 end
