@@ -154,7 +154,7 @@ def shoe_size(player)
       end
     end
   end
-  points
+  shoe_size
 end
 
 #returns an array of the team colors
