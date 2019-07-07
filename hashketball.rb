@@ -242,8 +242,25 @@ end
 
 #-----BONUS QUESTIONS-----#
 
+#Which player has the most points?
 def most_points_scored
-  #Which player has the most points?
+  most_points = 0
+  player_with_most_points = ""
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_data|
+          player_data.each do |name, stats|
+            if stats[:points] > most_points
+              most_points = stats[:points]
+              player_with_most_points = name
+            end
+          end
+        end
+      end
+    end
+  end
+  player_with_most_points
 end
 
 def winning_team
