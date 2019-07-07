@@ -220,19 +220,24 @@ def big_shoe_rebounds
   #First, find the player with the largest shoe size
   largest_size = 0
   player_with_largest_shoes = ""
+  big_shoe_rebounds = 0
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
-        data.each do |name, stats|
-          if stats[:shoe] > largest_size
-            largest_size = stats[:shoe]
-            player_with_largest_shoes = name
+        data.each do |player_data|
+          player_data.each do |name, stats|
+            if stats[:shoe] > largest_size
+              largest_size = stats[:shoe]
+              player_with_largest_shoes = name
+              big_shoe_rebounds = stats[:rebounds]
+            end
           end
         end
       end
     end
   end
   #Then, return that player's number of rebounds
+  big_shoe_rebounds
   #Remember to think about return values here.
   #Use binding.pry to drop into your method and understand what it is returning and why.
 
