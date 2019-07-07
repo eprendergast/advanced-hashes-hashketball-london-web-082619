@@ -126,7 +126,10 @@ game_hash.each do |location, team_data|
     if attribute == :players
       data.each do |player_data|
         player_data.each do |name, stats|
-          puts stats[:shoe]
+          if stats[:shoe] > largest_size
+            largest_size = stats[:shoe]
+            player_with_largest_shoes = name
+          end
         end
       end
     end
