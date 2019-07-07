@@ -126,7 +126,7 @@ game_hash.each do |location, team_data|
       data.each do |player|
         player.each do |name, stats|
           if name == player
-            points = game_hash[location][attribute]
+            points = stats[:points]
           end
         end
       end
