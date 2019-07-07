@@ -128,7 +128,7 @@ game_hash.each do |location, team_data|
       data.each do |player_data|
         player_data.each do |name, stats|
           if name == "Alan Anderson"
-            puts stats
+            player_stats = stats
           end
         end
       end
